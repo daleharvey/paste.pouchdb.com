@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+  height: 100%;
+}
+
+body[data-view=edit] {
+  background: #002b36;
+}
+body[data-view=output] {
+  background: #FFF;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #AAA;
+}
+
+#sidebar h1 {
+  text-align: center;
+  color: #FFF;
+}
+
+#frame-wrapper, #code, .CodeMirror {
+  display: none;
+}
+
+body[data-view=output] #frame-wrapper {
+ display: block;
+}
+
+body[data-view=edit] #code, body[data-view=edit] .CodeMirror {
+ display: block;
+}
+
+button, a {
+  border: 0;
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.8;
+  outline: none;
+}
+
+#view-buttons {
+  margin-bottom: 20px;
+}
+
+a {
+  width: 100%;
+  padding: 5px;
+  text-align: left;
+  background: #333;
+  border-bottom: 1px solid #222;
+  color: #666;
+  position: relative;
+  text-indent: 20px;
+}
+
+body[data-view=output] a.view-output,
+body[data-view=edit] a.view-code {
+  background: #555;
+  border-right: 3px solid #6CCB99;
+  color: #FFF;
+}
+
+body[data-view=output] .view-output:before,
+body[data-view=edit] .view-code:before {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 6px solid transparent;
+  border-right-color: #fff;
+  position: absolute;
+  top: 11px;
+  left: 5px;
+  z-index: 2;
+}
+
+#save {
+  padding: 10px;
+  margin: 10px auto;
+  background: #6CCB99;
+  width: 80%;
+  color: #FFF;
+}
+
+#code-wrapper {
+  margin-right: 200px;
+}
+
+#code, .CodeMirror {
+  height: 100%;
+}
+
+iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}

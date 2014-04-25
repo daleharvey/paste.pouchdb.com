@@ -1,0 +1,17 @@
+{
+  "name": "pppaste",
+  "main": "./index.js",
+  "repository": "https://github.com/daleharvey/pppaste",
+  "dependencies": {
+    "pouchdb": "*",
+    "express": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*",
+    "body-parser": "^1.0.2",
+    "multiline": "^0.3.2"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  }
+}
