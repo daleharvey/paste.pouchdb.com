@@ -9,8 +9,7 @@
   },
   "devDependencies": {
     "nodemon": "*",
-    "body-parser": "^1.0.2",
-    "multiline": "^0.3.2"
+    "body-parser": "^1.0.2"
   },
   "scripts": {
     "dev": "nodemon index.js"

@@ -21,6 +21,11 @@
         <a href="#output" class="view-output">View Output</a>
       </div>
       <button id="save">Share Code</button>
+      <div id="select-wrapper">
+        <select id="templates">
+          <option>Templates</option>
+        </select>
+      </div>
     </section>
 
     <script src="/codemirror/codemirror.js"></script>

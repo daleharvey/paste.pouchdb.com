@@ -1,7 +1,25 @@
 
 var dbUrl = document.location.protocol + '//' +
   document.location.host + '/db/pastes/';
-var db = new PouchDB(dbUrl, {skipSetup: true});
+var db = new PouchDB(dbUrl, {skipSetup: true, cache: false});
+
+// I cant set an id on a select box, wtf?
+var select = document.getElementById('templates');
+
+db.request({url: 'templates'}, function(err, res) {
+  res.forEach(function(tpl) {
+    var option = document.createElement('option');
+    option.value = tpl;
+    option.textContent = tpl;
+    select.appendChild(option);
+  });
+});
+
+select.addEventListener('change', function() {
+  if (select.value) {
+    document.location.href = '/template/' + select.value;
+  }
+});
 
 function hashChanged() {
   var hash = document.location.hash.slice(1) || 'edit';

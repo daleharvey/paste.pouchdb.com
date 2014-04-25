@@ -1,4 +1,5 @@
 {
   "verbose": true,
-  "ignore": ["www"]
+  "ignore": ["www"],
+  "ext": "js tpl"
 }

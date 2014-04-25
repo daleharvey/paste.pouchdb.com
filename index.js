@@ -3,7 +3,6 @@
 var fs = require('fs');
 
 var PouchDB = require('pouchdb');
-var multiline = require('multiline');
 var express = require('express');
 var bodyParser = require('body-parser');
 
@@ -13,24 +12,33 @@ var dbs = {};
 // Ugh? well screw you
 var index = fs.readFileSync(__dirname + '/www/index.tpl').toString();
 
-var defaultTemplate = multiline(function(){/*
-<html>
-  <script src="http://cdn.jsdelivr.net/pouchdb/2.1.2/pouchdb.min.js"></script>
-  <script>
-    var db = new PouchDB('test');
-    db.post({a: 'doc'}, function(err, doc) {
-      console.log('I POSTED!', doc);
-    });
-  </script>
-</html>
-*/});
+function serveTemplate(res, name) {
+  var path = __dirname + '/www/templates/' + name + '.tpl'
+  var tpl = fs.readFileSync(path).toString();
+  res.send(index.replace('{{code}}', tpl));
+}
 
-app.get('/', function (req, res, next) {
-  res.send(index.replace('{{code}}', defaultTemplate));
+app.get('/', function (req, res) {
+  serveTemplate(res, 'default');
 });
+
+app.get('/template/:template', function (req, res, next) {
+  if (req.params.template.match(/^[a-z0-9]+$/i)) {
+    serveTemplate(res, req.params.template);
+  } else {
+    res.send(400, 'invalid template');
+  }
+});
+
 
 app.use(bodyParser.json());
 app.use(express.static('www'));
+
+app.get('/db/pastes/templates', function (req, res, next) {
+  res.send(201, fs.readdirSync(__dirname + '/www/templates').map(function(x) {
+    return x.split('.').shift();
+  }));
+});
 
 app.get('/paste/:id', function (req, res, next) {
   var db = new PouchDB('pastes');
