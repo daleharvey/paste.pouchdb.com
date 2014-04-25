@@ -7,6 +7,10 @@
   </head>
   <body>
 
+    <a target="_blank" href="https://github.com/daleharvey/pppaste">
+      <div class="ribbon">Github</div>
+    </a>
+
     <section id="code-wrapper">
 
       <div id="frame-wrapper"></div>
@@ -15,7 +19,9 @@
     </section>
 
     <section id="sidebar">
+
       <h1>pppaste</h1>
+
       <div id="view-buttons">
         <a href="#edit" class="view-code">Edit Code</a>
         <a href="#output" class="view-output">View Output</a>

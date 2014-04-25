@@ -27,8 +27,8 @@ body[data-view=output] {
 }
 
 #sidebar h1 {
-  text-align: center;
   color: #FFF;
+  text-indent: 20px;
 }
 
 #frame-wrapper, #code, .CodeMirror {
@@ -57,12 +57,12 @@ button, a {
   margin-bottom: 20px;
 }
 
-a {
+section a {
   width: 100%;
   padding: 5px;
   text-align: left;
   background: #333;
-  border-bottom: 1px solid #222;
+ border-bottom: 1px solid #222;
   color: #666;
   position: relative;
   text-indent: 20px;
@@ -151,4 +151,18 @@ select {
   top: 15px;
   right: 10px;
   z-index: 2;
+}
+
+.ribbon {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 0.1em 3em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #EEE;
+  color: #555;
+  font-weight: bold;
+  transform: translateX(75%) rotate(45deg) translateX(-30%);
+  transform-origin: left top 0px;
 }
