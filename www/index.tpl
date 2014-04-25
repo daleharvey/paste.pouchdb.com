@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>pppaste</title>
     <link rel="stylesheet" href="/codemirror/codemirror.css" />
     <link rel="stylesheet" href="/codemirror/solarized.css" />
     <link rel="stylesheet" href="/style/pppaste.css" />
@@ -29,8 +30,5 @@
     <script src="/codemirror/htmlmixed/htmlmixed.js"></script>
     <script src="http://cdn.jsdelivr.net/pouchdb/2.1.2/pouchdb.min.js"></script>
     <script src="/js/pppaste.js"></script>
-
-    <script>
-    </script>
   </body>
 </html>

@@ -5,7 +5,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   height: 100%;
 }
 
@@ -95,6 +95,10 @@ body[data-view=edit] .view-code:before {
   background: #6CCB99;
   width: 80%;
   color: #FFF;
+}
+
+#save[data-sending="true"] {
+  opacity: 0.5;
 }
 
 #code-wrapper {

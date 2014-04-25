@@ -39,19 +39,13 @@ app.get('/paste/:id', function (req, res, next) {
   });
 });
 
-// Generate UUIDs
-app.get('/db/_uuids', function (req, res, next) {
-  var count = req.query.count || 1;
-  res.send(200, {
-    uuids: PouchDB.utils.uuids(count)
-  });
-});
-
 app.put('/db/pastes/:id', function (req, res, next) {
   new PouchDB('pastes').then(function(db) {
     return db.put(req.body);
-  }).then(function(response) {
+  }).then(function (response) {
     res.send(201, response);
+  }).catch(function (err) {
+    res.send(err.status, err);
   });
 });
 

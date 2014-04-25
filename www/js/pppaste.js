@@ -34,10 +34,33 @@ function setIframeContent() {
   var timer = window.setInterval(check_loaded, 20);
 }
 
+function doc() {
+  return {
+    _id: suid(),
+    code: editor.getValue()
+  };
+};
+
 function savePaste() {
-  db.post({code: editor.getValue()}).then(function(res) {
+  if (save.dataset.sending) return;
+
+  save.dataset.sending = true;
+  db.put(doc()).then(function (res) {
     document.location.href = '/paste/' + res.id + '/';
+  }).catch(function (err) {
+    // Retry on conflicts
+    console.log(err);
+    if (err.status === 409) {
+      return savePaste();
+    }
+    delete save.dataset.sending;
+    console.error(err);
   });
+}
+
+function suid() {
+  return ("000000" + (Math.random()*Math.pow(36,6) << 0)
+          .toString(36)).slice(-6);
 }
 
 var code = document.getElementById('code');
