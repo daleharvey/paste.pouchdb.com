@@ -26,7 +26,7 @@ app.get('/template/:template', function (req, res, next) {
   if (req.params.template.match(/^[a-z0-9]+$/i)) {
     serveTemplate(res, req.params.template);
   } else {
-    res.send(400, 'invalid template');
+    res.status(400).send('invalid template');
   }
 });
 
@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 app.use(express.static('www'));
 
 app.get('/db/pastes/templates', function (req, res, next) {
-  res.send(201, fs.readdirSync(__dirname + '/www/templates').map(function(x) {
+  res.status(201).send(fs.readdirSync(__dirname + '/www/templates').map(function(x) {
     return x.split('.').shift();
   }));
 });
