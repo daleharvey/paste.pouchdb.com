@@ -51,9 +51,9 @@ app.put('/db/pastes/:id', function (req, res, next) {
   new PouchDB('pastes').then(function(db) {
     return db.put(req.body);
   }).then(function (response) {
-    res.send(201, response);
+    res.status(201).send(response);
   }).catch(function (err) {
-    res.send(err.status, err);
+    res.status(err.status).send(err);
   });
 });
 
