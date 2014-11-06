@@ -1,8 +1,8 @@
 {
-  "name": "pppaste",
+  "name": "paste.pouchdb.com",
   "main": "./index.js",
   "version": "0.0.1",
-  "repository": "https://github.com/daleharvey/pppaste",
+  "repository": "https://github.com/daleharvey/paste.pouchdb.com",
   "dependencies": {
     "pouchdb": "*",
     "express": "*"
@@ -12,6 +12,6 @@
     "body-parser": "^1.0.2"
   },
   "scripts": {
-    "dev": "nodemon index.js"
+    "start": "nodemon index.js"
   }
 }
