@@ -7,7 +7,7 @@
   </head>
   <body>
 
-    <a target="_blank" href="https://github.com/daleharvey/pppaste">
+    <a target="_blank" href="https://github.com/daleharvey/paste.pouchdb.com">
       <div class="ribbon">Github</div>
     </a>
 
