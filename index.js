@@ -19,7 +19,7 @@ function serveTemplate(res, name) {
 }
 
 app.get('/', function (req, res) {
-  serveTemplate(res, 'default');
+  serveTemplate(res, 'pouchdb');
 });
 
 app.get('/template/:template', function (req, res, next) {

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>pppaste</title>
+    <title>paste.pouchdb.com</title>
     <link rel="stylesheet" href="/codemirror/codemirror.css" />
     <link rel="stylesheet" href="/codemirror/solarized.css" />
     <link rel="stylesheet" href="/style/pppaste.css" />
@@ -20,7 +20,7 @@
 
     <section id="sidebar">
 
-      <h1>pppaste</h1>
+      <h1>paste.pouchdb.com</h1>
 
       <div id="view-buttons">
         <a href="#edit" class="view-code">Edit Code</a>
@@ -39,7 +39,7 @@
     <script src="/codemirror/css/css.js"></script>
     <script src="/codemirror/xml/xml.js"></script>
     <script src="/codemirror/htmlmixed/htmlmixed.js"></script>
-    <script src="http://cdn.jsdelivr.net/pouchdb/2.1.2/pouchdb.min.js"></script>
+    <script src="//cdn.jsdelivr.net/pouchdb/3.0.6/pouchdb.js"></script>
     <script src="/js/pppaste.js"></script>
   </body>
 </html>
